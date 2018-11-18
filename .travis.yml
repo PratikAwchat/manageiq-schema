@@ -14,6 +14,10 @@ addons:
 before_install: bin/setup
 before_script: bundle exec rake spec:setup
 after_script: bundle exec codeclimate-test-reporter
-branches:
-  only:
-  - dev-merge-231018
+notifications:
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/f936b6b14caf70a29c31
+    on_success: change
+    on_failure: always
+    on_start: never
